@@ -63,6 +63,7 @@ def get_trades(coin_data):
         profit, highExchange, lowExchange = get_profit(coin_data[ticker])
 
         possible_trades[ticker] = {
+            'symbol': ticker,
             'profit': profit,
             'highExchange': highExchange,
             'lowExchange': lowExchange
@@ -103,10 +104,10 @@ def create_sorted_dataframe(data, sort_key):
 
     return df
 
-coin_data = get_coin_data(50)
-possible_trades = get_trades(coin_data)
-suggest_trade(possible_trades)
+# coin_data = get_coin_data(50)
+# possible_trades = get_trades(coin_data)
+# suggest_trade(possible_trades)
 
-sorted_trades_df = create_sorted_dataframe(possible_trades, 'profit')
+# sorted_trades_df = create_sorted_dataframe(possible_trades, 'profit')
 
-print(sorted_trades_df)
+# print(sorted_trades_df)
