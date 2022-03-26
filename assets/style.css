@@ -40,3 +40,9 @@ body {
   color: white;
   margin: 8px;
 }
+
+.attribution-text {
+  text-align: center;
+  color: white;
+  margin: 4px;
+}

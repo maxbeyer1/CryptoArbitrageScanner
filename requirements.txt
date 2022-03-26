@@ -1,0 +1,4 @@
+dash==2.3.0
+pandas==1.4.1
+gunicorn==20.1.0
+pycoingecko==2.20

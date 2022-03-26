@@ -13,6 +13,7 @@ external_stylesheets = [
 ]
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 app.title = "Crypto Arbitrage Scanner"
 
 app.layout = html.Div( 
@@ -48,6 +49,7 @@ app.layout = html.Div(
         className='table-wrapper'
         ),
         html.Div(id='last-updated-text', className='last-updated'),
+        html.Div("Powered by CoinGecko API", className="attribution-text")
         dcc.Interval(
             id = 'interval-component',
             interval = 120 * 1000, # in milliseconds --> MUST stay above 1 minute to prevent rate limiting
