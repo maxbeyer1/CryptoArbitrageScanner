@@ -49,7 +49,7 @@ app.layout = html.Div(
         className='table-wrapper'
         ),
         html.Div(id='last-updated-text', className='last-updated'),
-        html.Div("Powered by CoinGecko API", className="attribution-text")
+        html.P("Powered by CoinGecko", className="attribution-text"),
         dcc.Interval(
             id = 'interval-component',
             interval = 120 * 1000, # in milliseconds --> MUST stay above 1 minute to prevent rate limiting
@@ -82,4 +82,4 @@ def update_text(n):
     return html.Span('Last updated at {ftime}.'.format(ftime = current_time_str))
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=False)
