@@ -26,25 +26,27 @@ app.layout = html.Div(
         className='header',
         ),
         html.Div(
-            dash_table.DataTable(
-                id='trades-table',
-                columns=[
-                    {'name': 'Coin', 'id': 'symbol'},
-                    {'name': 'Profit (%)', 'id': 'profit'},
-                    {'name': 'High Exchange (buy)', 'id': 'highExchange'},
-                    {'name': 'Low Exchange (sell)', 'id': 'lowExchange'},
-                ],
+            dcc.Loading(
+                dash_table.DataTable(
+                    id='trades-table',
+                    columns=[
+                        {'name': 'Coin', 'id': 'symbol'},
+                        {'name': 'Profit (%)', 'id': 'profit'},
+                        {'name': 'High Exchange (buy)', 'id': 'highExchange'},
+                        {'name': 'Low Exchange (sell)', 'id': 'lowExchange'},
+                    ],
 
-                style_header={
-                    'backgroundColor': 'rgb(30, 30, 30)',
-                    'color': 'white'
-                },
-                style_data={
-                    'backgroundColor': 'rgb(50, 50, 50)',
-                    'color': 'white'
-                },
+                    style_header={
+                        'backgroundColor': 'rgb(30, 30, 30)',
+                        'color': 'white'
+                    },
+                    style_data={
+                        'backgroundColor': 'rgb(50, 50, 50)',
+                        'color': 'white'
+                    },
 
-                sort_action='native'
+                    sort_action='native'
+                ),
             ),
         className='table-wrapper'
         ),
