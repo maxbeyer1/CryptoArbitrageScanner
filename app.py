@@ -66,7 +66,7 @@ app.layout = html.Div(
     Input('interval-component', 'n_intervals')
 )
 def display_trades(n):
-    coin_data = trades.get_coin_data(50)
+    coin_data = trades.get_coin_data(10)
     possible_trades = trades.get_trades(coin_data)
     df = trades.create_sorted_dataframe(possible_trades, 'profit')
 
